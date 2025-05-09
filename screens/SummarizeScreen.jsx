@@ -11,7 +11,7 @@ import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import { HfInference } from '@huggingface/inference';
 
 
-// import {HF_TOKEN} from "@env"
+import {HF_TOKEN} from "@env"
 
 
 export default function SummarizeScreen() {
@@ -21,7 +21,7 @@ export default function SummarizeScreen() {
 
   const scrollViewRef = useRef(null);
 
-  const hf = new HfInference("access_token");
+  const hf = new HfInference(HF_TOKEN);
 
   const [input, setInput] = useState("");
   const [responding, setResponding] = useState(false);
